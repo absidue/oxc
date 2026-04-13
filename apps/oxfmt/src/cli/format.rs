@@ -174,18 +174,15 @@ impl CliRunner {
         });
 
         // Run scoped walks (root + nested) — sends entries to tx_entry
-        let any_config_found =
-            match scoped_walker.run(config_resolver, &ignore_patterns, &tx_entry) {
-                Ok(found) => found,
-                Err(err) => {
-                    drop(tx_entry);
-                    utils::print_and_flush(
-                        stderr,
-                        &format!("Failed to parse configuration.\n{err}\n"),
-                    );
-                    return CliRunResult::InvalidOptionConfig;
-                }
-            };
+        let any_config_found = match scoped_walker.run(config_resolver, &ignore_patterns, &tx_entry)
+        {
+            Ok(found) => found,
+            Err(err) => {
+                drop(tx_entry);
+                utils::print_and_flush(stderr, &format!("Failed to parse configuration.\n{err}\n"));
+                return CliRunResult::InvalidOptionConfig;
+            }
+        };
         // Drop sender so the formatting service knows no more entries are coming
         drop(tx_entry);
 
