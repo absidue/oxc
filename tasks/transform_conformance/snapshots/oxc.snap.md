@@ -1,6 +1,6 @@
 commit: 91b4ce32
 
-Passed: 211/348
+Passed: 211/349
 
 # All Passed:
 * babel-plugin-transform-class-static-block
@@ -555,7 +555,7 @@ x Output mismatch
 x Output mismatch
 
 
-# legacy-decorators (8/94)
+# legacy-decorators (8/95)
 * oxc/accessor/input.ts
 x Output mismatch
 
@@ -578,6 +578,11 @@ rebuilt        : <None>
 Unresolved references mismatch:
 after transform: ["PropertyDescriptor", "babelHelpers"]
 rebuilt        : ["babelHelpers", "property"]
+
+* oxc/accessor-use-define-for-class-fields/input.ts
+Scope parent mismatch:
+after transform: ScopeId(5): Some(ScopeId(0))
+rebuilt        : ScopeId(2): Some(ScopeId(1))
 
 * oxc/accessor-with-class-properties/input.ts
 Bindings mismatch:
