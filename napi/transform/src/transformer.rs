@@ -359,9 +359,7 @@ impl From<TypeScriptOptions> for oxc::transformer::TypeScriptOptions {
                 .unwrap_or(ops.only_remove_type_imports),
             allow_namespaces: options.allow_namespaces.unwrap_or(ops.allow_namespaces),
             allow_declare_fields: options.allow_declare_fields.unwrap_or(ops.allow_declare_fields),
-            optimize_const_enums: options
-                .optimize_const_enums
-                .unwrap_or(ops.optimize_const_enums),
+            optimize_const_enums: options.optimize_const_enums.unwrap_or(ops.optimize_const_enums),
             optimize_enums: options.optimize_enums.unwrap_or(ops.optimize_enums),
             remove_class_fields_without_initializer: options
                 .remove_class_fields_without_initializer
